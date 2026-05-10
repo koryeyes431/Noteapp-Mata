@@ -63,7 +63,7 @@ export default function AddNoteScreen() {
               ]}
               onPress={() => setStatus(s)}
             >
-              <Text style={{ color: status === s ? '#000' : '#333' }}>
+              <Text style={{ color: status === s ? '#ffffff' : '#333' }}>
                 {s}
               </Text>
             </Pressable>
@@ -77,24 +77,24 @@ export default function AddNoteScreen() {
           ]}
           onPress={handleSave}
         >
-          <Text style={{ color: '#fff' }}>Save Note</Text>
+          <Text style={{ color: '#ffffff' }}>Save Note</Text>
         </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-const PRIMARY = '#F4C20D';
+const PRIMARY = '#007AFF';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#E7E2D3' },
+  container: { flex: 1, backgroundColor: '#F5F5F5' },
 
   content: { padding: 16 },
 
   label: { marginTop: 10, marginBottom: 6, fontWeight: '600' },
 
   input: {
-    backgroundColor: '#F2F2F2',
+    backgroundColor: '#ffffff',
     padding: 14,
     borderRadius: 10,
     marginBottom: 10,

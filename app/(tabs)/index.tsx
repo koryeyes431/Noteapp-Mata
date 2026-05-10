@@ -13,10 +13,10 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.center}>
-        <Text style={styles.title}>Welcome to Yellow notes</Text>
+        <Text style={styles.title}>Note ni Nako</Text>
 
         <Text style={styles.subtitle}>
-          Welcome
+          Dri nimo ibutang imo mga buhatonon
         </Text>
 
         <Pressable
@@ -26,17 +26,17 @@ export default function HomeScreen() {
           ]}
           onPress={() => router.push('/notes/list')} // ✅ push
         >
-          <Text style={styles.buttonText}>Open Yellow Notes</Text>
+          <Text style={styles.buttonText}>Open Notes</Text>
         </Pressable>
       </View>
     </SafeAreaView>
   );
 }
 
-const PRIMARY = '#F4C20D';
+const PRIMARY = '#007AFF';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#E7E2D3' },
+  container: { flex: 1, backgroundColor: '#ffffff' },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 10 },
   subtitle: { color: '#666', marginBottom: 20 },
@@ -46,5 +46,5 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 10,
   },
-  buttonText: { color: '#000', fontWeight: 'bold' },
+  buttonText: { color: '#ffffff', fontWeight: 'bold' },
 });

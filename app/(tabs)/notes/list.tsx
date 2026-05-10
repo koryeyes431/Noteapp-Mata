@@ -2,6 +2,7 @@ import { deleteTask, getTasks } from '@/lib/database';
 import { useFocusEffect, useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import {
+  Alert,
   FlatList,
   Pressable,
   SafeAreaView,
@@ -22,8 +23,28 @@ export default function NotesListScreen() {
   );
 
   const handleDelete = (id: number) => {
-    deleteTask(id);
-    setNotes(getTasks());
+    Alert.alert(
+      "Delete Note",
+      "Are you sure you want to delete this note?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Delete",
+          style: "destructive",
+          onPress: () => {
+                    try {
+                  deleteTask(id);
+                  setNotes(getTasks());
+                } catch (error) {
+                  Alert.alert('Delete Error', 'Failed to delete note.');
+            }
+          }
+        }
+      ]
+    )
   };
 
   const handleView = (note: any) => {
@@ -96,16 +117,16 @@ export default function NotesListScreen() {
         ]}
         onPress={() => router.push('/notes/add')}
       >
-        <Text style={{ color: '#000', fontSize: 28 }}>+</Text>
+        <Text style={{ color: '#ffffff', fontSize: 28 }}>+</Text>
       </Pressable>
     </SafeAreaView>
   );
 }
 
-const PRIMARY = '#F4C20D';
+const PRIMARY = '#007AFF';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#E7E2D3' },
+  container: { flex: 1, backgroundColor: '#F5F5F5' },
 
   empty: { marginTop: 10, color: '#999' },
 
@@ -126,7 +147,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 
-  badgeText: { color: '#000' },
+  badgeText: { color: '#ffffff' },
 
   status: { fontWeight: 'bold', marginTop: 5 },
 

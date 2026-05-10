@@ -31,9 +31,8 @@ export default function RootLayout() {
         {/* ✅ Notes screens */}
         <Stack.Screen
           name="notes"
-          options={{ headerShown: false }}
+          options={{ title: 'Notes', headerShown: false }}
         />
-
       </Stack>
 
       <StatusBar style="auto" />

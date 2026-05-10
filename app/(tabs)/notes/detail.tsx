@@ -52,11 +52,11 @@ export default function DetailScreen() {
             pressed && { opacity: 0.7 },
           ]}
           onPress={() =>
-            router.push({
-              pathname: '/notes/edit',
-              params: { id, title, description, category, status },
-            })
-          }
+  router.push({
+    pathname: '/(tabs)/notes/edit',
+    params: { id, title, description, category, status },
+  })
+}
         >
           <Text style={styles.editButtonText}>Edit Note</Text>
         </Pressable>
@@ -65,12 +65,12 @@ export default function DetailScreen() {
   );
 }
 
-const PRIMARY = '#F4C20D';
+const PRIMARY = '#007AFF';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E7E2D3',
+    backgroundColor: '#F5F5F5',
   },
 
   content: {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
 
   badgeText: {
-    color: '#000',
+    color: '#ffffff',
     fontWeight: '600',
   },
 

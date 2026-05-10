@@ -5,9 +5,9 @@ export default function NotesLayout() {
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#F4C20D',
+          backgroundColor: '#007AFF',
         },
-        headerTintColor: '#000',
+        headerTintColor: '#ffffff',
         headerTitleStyle: {
           fontWeight: 'bold',
         },
